@@ -19,7 +19,7 @@ namespace DataBinding
         {
             var per = (Persona)Resources["personaUno"];
             per.Nombre = "Messi";
-            per.Pais = "Argentina";
+            per.Pais = "Argentino";
         }
     }
 }
