@@ -7,7 +7,7 @@ namespace DataBinding
     using System.ComponentModel;
     using System.Text;
 
-    class Persona:Notificable
+   public class Persona:Notificable
     {
         #region Atributos
         private string nombre;
@@ -44,7 +44,13 @@ namespace DataBinding
             }
         }
 
-     
+
+        #endregion
+        #region Metodos
+        public override string ToString()
+        {
+            return $"{Nombre} | {Pais}";
+        }
         #endregion
     }
 }

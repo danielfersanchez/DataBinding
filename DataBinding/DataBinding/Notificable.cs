@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace DataBinding
 {
-    class Notificable : INotifyPropertyChanged
+    public class Notificable : INotifyPropertyChanged
     {
         #region Implementacion
 

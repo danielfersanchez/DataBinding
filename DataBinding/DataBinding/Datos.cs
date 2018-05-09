@@ -22,5 +22,20 @@ namespace DataBinding
                 OnPropertyChanged();
             }
         }
+
+        #region Constructores
+        public Datos()
+        {
+            Personas = new ObservableCollection<Persona>();
+            for (int i = 0; i < 5; i++)
+            {
+                Personas.Add(new Persona()
+                {
+                    Nombre = $"Persona {i}",
+                    Pais = $"Pais {i}"
+                });
+            }
+        }
+        #endregion
     }
 }
