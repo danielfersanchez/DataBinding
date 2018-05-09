@@ -12,10 +12,10 @@ namespace DataBinding
 		public MainPage()
 		{
 			InitializeComponent();
-            btnEnvar.Clicked += BtnEnvar_Clicked;
+            btnEnviar.Clicked += BtnEnviar_Clicked;
 		}
 
-        private void BtnEnvar_Clicked(object sender, EventArgs e)
+        private void BtnEnviar_Clicked(object sender, EventArgs e)
         {
             var per = (Persona)Resources["personaUno"];
             per.Nombre = "Messi";
