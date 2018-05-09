@@ -6,7 +6,9 @@ namespace DataBinding
     public class Datos:Notificable
     {
         private ObservableCollection<Persona> personas;
-        public ObservableCollection<Persona> Personas
+        private Persona personaSeleccionada;
+
+        public ObservableCollection<Persona> Personas   
         {
             get
             {
@@ -19,6 +21,23 @@ namespace DataBinding
                     return;
                 }
                 personas = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Persona PersonaSeleccionada
+        {
+            get
+            {
+                return personaSeleccionada;
+            }
+            set
+            {
+                if(personaSeleccionada == value)
+                {
+                    return;
+                }
+                personaSeleccionada = value;
                 OnPropertyChanged();
             }
         }
