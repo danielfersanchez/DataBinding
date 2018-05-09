@@ -24,7 +24,9 @@ namespace DataBinding
                 {
                     return;
                 }
+                nombre = value;
                 OnPropertyChanged();
+                
             }
         }
         public String Pais {
@@ -37,6 +39,7 @@ namespace DataBinding
                 {
                     return;
                 }
+                pais = value;
                 OnPropertyChanged();
             }
         }
