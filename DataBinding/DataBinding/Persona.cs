@@ -12,6 +12,44 @@ namespace DataBinding
         #region Atributos
         private string nombre;
         private string pais;
+        private decimal saldo;
+        private DateTime fechadeNacimiento;
+
+        public DateTime FechaDeNacimiento
+        {
+            get
+            {
+                return fechadeNacimiento;
+            }
+            set
+            {
+                if (fechadeNacimiento == value)
+                {
+                    return;
+                }
+                fechadeNacimiento = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public decimal Saldo
+        {
+            get
+            {
+                return saldo;
+            }
+            set
+            {
+                if (saldo == value)
+                {
+                    return;
+                }
+                saldo = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
         #region propiedades
         public String Nombre {
@@ -49,7 +87,7 @@ namespace DataBinding
         #region Metodos
         public override string ToString()
         {
-            return $"{Nombre} | {Pais}";
+            return $"{Nombre} | {Pais} | { Saldo} | { FechaDeNacimiento}";
         }
         #endregion
     }

@@ -18,9 +18,14 @@
                       SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}">
             </ListView>
             <StackLayout Grid.Row="1"
-                         BindingContext="{Binding PersonaSeleccionada}">
-                <Label Text="{Binding Nombre,Mode=TwoWay}"></Label>
-                <Label Text="{Binding Pais,Mode=TwoWay}"></Label>
+                         BindingContext="{Binding PersonaSeleccionada}"
+                         HorizontalOptions="Center">
+                <Label Text="{Binding Nombre,Mode=TwoWay}"
+                       TextColor="Blue">
+                </Label>
+                <Label Text="{Binding Pais,Mode=TwoWay}" 
+                       TextColor="Blue">
+                </Label>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

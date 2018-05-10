@@ -2,6 +2,7 @@
 
 namespace DataBinding
 {
+    using System;
     using System.Collections.ObjectModel;
     public class Datos:Notificable
     {
@@ -45,13 +46,16 @@ namespace DataBinding
         #region Constructores
         public Datos()
         {
+            var aleatorio = new Random();
             Personas = new ObservableCollection<Persona>();
             for (int i = 0; i < 5; i++)
             {
                 Personas.Add(new Persona()
                 {
                     Nombre = $"Persona {i}",
-                    Pais = $"Pais {i}"
+                    Pais = $"Pais {i}",
+                    FechaDeNacimiento = new DateTime(1980+i, i+1,1),
+                    Saldo = (decimal)(aleatorio.Next(100, 5000)*3.1416)
                 });
             }
         }
