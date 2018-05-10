@@ -6,6 +6,33 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:Datos x:Key="datosUno"></local:Datos>
+            <local:Converter x:Key="saldoConverter"></local:Converter>
+            <DataTemplate x:Key="listTemplate">
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout>
+                            <Label Text="{Binding Nombre}"
+                                   FontSize="20">
+                            </Label>
+                            <Label Text="{Binding Pais}"
+                                   FontSize="10">
+                            </Label>
+                            <Label Text="{Binding FechaDeNacimiento, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                   >
+                            </Label>
+                            <Label Text="{Binding Saldo, StringFormat='{}{0:C}'}"
+                                   Grid.Column="1"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="{Binding Saldo, Converter={StaticResource saldoConverter}}">
+                            </Label>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -15,7 +42,9 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <ListView ItemsSource="{Binding Personas}"
-                      SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}">
+                      SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}"
+                      HasUnevenRows="True"
+                      ItemTemplate="{StaticResource listTemplate}">
             </ListView>
             <StackLayout Grid.Row="1"
                          BindingContext="{Binding PersonaSeleccionada}"
@@ -26,6 +55,9 @@
                 <Label Text="{Binding Pais,Mode=TwoWay}" 
                        TextColor="Blue">
                 </Label>
+                <Label Text="{Binding FechaDeNacimiento, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="Blue"></Label>
+                <Label Text="{Binding Saldo, StringFormat='{}{0:C}'}"></Label>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

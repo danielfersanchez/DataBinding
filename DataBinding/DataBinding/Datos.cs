@@ -48,7 +48,7 @@ namespace DataBinding
         {
             var aleatorio = new Random();
             Personas = new ObservableCollection<Persona>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 11; i++)
             {
                 Personas.Add(new Persona()
                 {
